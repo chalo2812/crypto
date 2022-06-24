@@ -1,0 +1,8 @@
+version: '3.4'
+services:
+  back:
+    build: ./crypto-back
+  front:
+    build: ./crypto-front
+    depends_on:
+      - back

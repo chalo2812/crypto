@@ -1,0 +1,6 @@
+/.idea/**
+/target/**
+.idea/**
+/.idea/
+/target/
+web-crypto-back.iml
