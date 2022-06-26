@@ -1,4 +1,4 @@
-## Web Crypto Front (End)
+## Crypto Front
 
 El projecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 

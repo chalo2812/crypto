@@ -1,6 +1,6 @@
 /.idea/**
-/target/**
+/target/
 .idea/**
 /.idea/
-/target/
+/src/main/resources/application.properties
 web-crypto-back.iml
