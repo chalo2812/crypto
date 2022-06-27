@@ -1,4 +1,4 @@
-package ar.web.crypto.back.service;
+package ar.crypto.back.service;
 
 import org.springframework.stereotype.Service;
 

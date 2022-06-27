@@ -1,4 +1,4 @@
-package ar.web.crypto.back;
+package ar.crypto.back;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +25,8 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfo("Web Crypto REST API",
-            "REST API de Web Crypto.",
+        return new ApiInfo("Crypto REST API",
+            "REST API de Crypto.",
             "1.0.0-SNAPSHOT", "Licencia del API",
              new Contact("Gonzalo","localhost","no-existe") ,
             "Licencia del API", "http://localhost:9090/", Collections.emptyList());

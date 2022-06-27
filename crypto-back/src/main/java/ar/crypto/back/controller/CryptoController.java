@@ -1,6 +1,6 @@
-package ar.web.crypto.back.controller;
+package ar.crypto.back.controller;
 
-import ar.web.crypto.back.service.WebCryptoService;
+import ar.crypto.back.service.CryptoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,20 +12,19 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 @RestController(value = "Controller de Crypto")
-@RequestMapping(path = "/web/crypto/api/v1")
-@Tag(name = "Web Crypto",
+@RequestMapping(path = "/crypto/api/v1")
+@Tag(name = "Crypto",
         description = "Api donde consultaremos status, monto y cotizacion de las criptos")
-public class WebCryptoController {
+public class CryptoController {
 
     @Autowired
-    private WebCryptoService webCryptoService;
+    private CryptoService cryptoService;
 
     @Operation(summary = "Metodo para probar el servicio este levantado",
             description = "Metodo para probar el servicio este levantado")
     @GetMapping(name = "Metodo para probar el servicio este levantado", path = "/cryptocurrency")
     public String postCrypto() throws URISyntaxException, IOException {
-        return webCryptoService.postCrypto();
-
+        return cryptoService.postCrypto();
     }
 
 }

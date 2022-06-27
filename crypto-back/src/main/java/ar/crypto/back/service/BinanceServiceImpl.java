@@ -1,4 +1,4 @@
-package ar.web.crypto.back.service;
+package ar.crypto.back.service;
 
 import org.apache.http.HttpHeaders;
 import org.apache.http.NameValuePair;
@@ -18,24 +18,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class WebCryptoServiceImpl implements WebCryptoService {
+public class BinanceServiceImpl implements BinanceService{
 
-    @Value("${coinmarketcap.api.key}")
-    public String coinmarketcapApiKey;
+    @Value("${binance.api}")
+    private String binanceApi;
+    @Value("${binance.api.key}")
+    private String binanceApiKey;
+    @Value("${binance.secret.key}")
+    private String binanceSecretKey;
 
     @Override
-    public String postCrypto() throws IOException, URISyntaxException {
+    public String postCrypto() throws URISyntaxException, IOException {
         List<NameValuePair> parameters = new ArrayList<NameValuePair>();
         parameters.add(new BasicNameValuePair("convert","USD"));
         URIBuilder query = new URIBuilder("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest");
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet request = new HttpGet(query.addParameters(parameters).build());
         request.setHeader(HttpHeaders.ACCEPT, "application/json");
-        request.addHeader("X-CMC_PRO_API_KEY", coinmarketcapApiKey);
+        request.addHeader("X-CMC_PRO_API_KEY", binanceApi);
         CloseableHttpResponse response = client.execute(request);
         EntityUtils.consume(response.getEntity());
         String resp = String.valueOf(response.getEntity());
         response.close();
         return resp;
     }
+
 }
