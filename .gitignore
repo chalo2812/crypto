@@ -4,6 +4,7 @@
 crypto-back/target/**
 crypto-back/.idea/**
 crypto-back/src/main/resources/application.properties
+crypto-back/.env
 
 #Front
 crypto-front/package-lock.json
