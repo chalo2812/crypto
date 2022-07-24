@@ -10,14 +10,12 @@ services:
       context: ./crypto-back/
       dockerfile: Dockerfile
     environment:
-      - VIRTUAL_HOST=back.dev.local
-    ports:
-      - 80:9090
+      - VIRTUAL_HOST=back${api}
   front:
     build: 
       context: ./crypto-front/
       dockerfile: Dockerfile
     environment:
-      - VIRTUAL_HOST=front.dev.local
+      - VIRTUAL_HOST=front${api}
     depends_on:
       - back
