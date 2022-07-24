@@ -5,29 +5,19 @@ services:
     container_name: nginx
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    ports:
-      - "80:80"
-      - "443:443"
-    expose:
-      - 80
   back:
     build: 
       context: ./crypto-back/
       dockerfile: Dockerfile
     environment:
       - VIRTUAL_HOST=back.dev.local
-    expose:
+    ports:
       - 80:9090
-    depends_on:
-      - nginx
   front:
     build: 
       context: ./crypto-front/
       dockerfile: Dockerfile
     environment:
       - VIRTUAL_HOST=front.dev.local
-    expose:
-      - "80"
     depends_on:
-      - nginx
       - back
