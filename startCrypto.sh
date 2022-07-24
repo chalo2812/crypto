@@ -1,2 +1,3 @@
 docker-compose up --build -d
-pause
+read -s -n 1 -p "Presione para continuar . . ."
+echo
