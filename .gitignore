@@ -21,4 +21,6 @@ crypto-front/npm-debug.log*
 crypto-front/yarn-debug.log*
 crypto-front/yarn-error.log*
 crypto-front/*.iml
+crypto-front/.env
+.env
 
