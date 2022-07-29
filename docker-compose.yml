@@ -14,7 +14,7 @@ services:
       context: ./crypto-back/
       dockerfile: Dockerfile
     environment:
-      - VIRTUAL_HOST=back${api} 
+      - VIRTUAL_HOST=back${domain} 
     expose:
       - 9090
   front:
@@ -22,7 +22,7 @@ services:
       context: ./crypto-front/
       dockerfile: Dockerfile
     environment:
-      - VIRTUAL_HOST=front${api}
+      - VIRTUAL_HOST=front${domain}
     depends_on:
       - back
     expose:
