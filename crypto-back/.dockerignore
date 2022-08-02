@@ -1,9 +1,10 @@
 .gitignore
+*.iml
 src/main/java
 target/classes
 target/generated-sources
 target/maven-archiver
 target/maven-status
 pom.xml
-target/crypto-back-1.0.0-SNAPSHOT.jar.original
+target/*.jar.original
 Dockerfile
