@@ -2,6 +2,7 @@ package ar.crypto.back;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.service.Contact;
 import springfox.documentation.builders.PathSelectors;
@@ -15,6 +16,9 @@ import java.util.Collections;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
+    @Value("${application.version}")
+    private String version;
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -27,7 +31,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo("Crypto REST API",
             "REST API de Crypto.",
-            "1.0.0-SNAPSHOT", "Licencia del API",
+            this.version, "Licencia del API",
              new Contact("Gonzalo","localhost","no-existe") ,
             "Licencia del API", "http://localhost:9090/", Collections.emptyList());
     }

@@ -6,10 +6,11 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     ports:
-      - 80:80
+      - "80:80"
     expose:
       - 80
   back:
+    container_name: crypto-back
     build: 
       context: ./crypto-back/
       dockerfile: Dockerfile
@@ -18,6 +19,7 @@ services:
     expose:
       - 9090
   front:
+    container_name: crypto-front
     build: 
       context: ./crypto-front/
       dockerfile: Dockerfile
