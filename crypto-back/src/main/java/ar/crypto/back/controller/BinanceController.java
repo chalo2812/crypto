@@ -24,8 +24,8 @@ public class BinanceController {
 
     @Operation(tags = {"Binance"},
 //            security=@SecurityRequirement(name= Authentication.),
-            summary = "foo",
-            description = "bar")
+            summary = "Mostrar todos las crypto",
+            description = "Mostrar todos las crypto")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200",description = "OK")
     })

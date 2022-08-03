@@ -30,7 +30,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo("Crypto REST API",
-            "REST API de Crypto.",
+            "Endpoins de las API de Crypto.",
             this.version, "Licencia del API",
              new Contact("Gonzalo","localhost","no-existe") ,
             "Licencia del API", "http://localhost:9090/", Collections.emptyList());

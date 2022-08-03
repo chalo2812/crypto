@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 @RestController(value = "Controller de Crypto")
-@RequestMapping(path = "/crypto/api/v1")
+@RequestMapping(path = "/crypto")
 @Tag(name = "Crypto",
         description = "Api donde consultaremos status, monto y cotizacion de las criptos")
 public class CryptoController {
