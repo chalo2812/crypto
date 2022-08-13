@@ -1,0 +1,9 @@
+.Header {
+  text-align: center;
+  color: white;
+  background: #282c34;
+}
+.Header-logo {
+  height: 3em;
+  text-align: right;
+}

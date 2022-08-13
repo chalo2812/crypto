@@ -1,13 +1,12 @@
 import './App.css';
-import Crypto from './componentes/Crypto.js';
+import Crypto from './componentes/crypto/Crypto.js';
+import Header from './componentes/header/Header.js';
 
 function App() {
   return (
     <div className="App">
-      <Crypto />
-      <header className="App-header">
-        <p>Edit <code>src/App.js</code> and save to reload.</p>
-      </header>
+      <Header/>
+      <Crypto/>
     </div>
   );
 }
