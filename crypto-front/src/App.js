@@ -10,6 +10,7 @@ import './index.js';
 //Style
 import './App.css';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App()  {
   return (
