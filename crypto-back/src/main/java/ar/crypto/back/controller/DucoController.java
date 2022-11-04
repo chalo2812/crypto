@@ -21,10 +21,8 @@ public class DucoController {
   @Autowired
   private DucoService ducoService;
 
-  @Operation(summary = "Metodo del balance de Duco-Coin.",
-          description = "Balance de Duco-Coin.")
-  @GetMapping(name = "Metodo para obtener el saldo",
-          path = "/balance/{nameAccount}",produces = MediaType.APPLICATION_JSON_VALUE)
+  @Operation(summary = "Metodo del balance de Duco-Coin.", description = "Balance de Duco-Coin.")
+  @GetMapping(name = "Metodo para obtener el saldo", path = "/balance/{nameAccount}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
   public String balance(@PathVariable String nameAccount) throws URISyntaxException, IOException {
       return ducoService.getBalance(nameAccount);
   }

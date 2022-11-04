@@ -30,7 +30,7 @@ public class CryptoServiceImpl implements CryptoService {
         URIBuilder query = new URIBuilder("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest");
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet request = new HttpGet(query.addParameters(parameters).build());
-        request.setHeader(HttpHeaders.ACCEPT, "application/json");
+        request.setHeader(HttpHeaders.ACCEPT, "*/*");
         request.addHeader("X-CMC_PRO_API_KEY", coinmarketcapApiKey);
         CloseableHttpResponse response = client.execute(request);
         EntityUtils.consume(response.getEntity());
