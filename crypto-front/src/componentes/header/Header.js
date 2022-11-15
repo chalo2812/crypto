@@ -1,13 +1,10 @@
 import React from 'react';
-
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-//dimport NavDropdown from 'react-bootstrap/NavDropdown';
-import Crypto from '../crypto/Crypto.js';
-
+// eslint-disable-next-line
+import {Container, Nav, Navbar, NavDropdown, Button} from 'react-bootstrap';
+// eslint-disable-next-line
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css';
-
 
 function Header() {
   return (
@@ -21,10 +18,23 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-
     </Navbar>
-    <br />
-    <Crypto/>
+    <div class="primary">
+        <br></br>
+        <Table striped="columns" bordered="true" responsive="md">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+
+        </Table>
+        <br></br>
+    </div>
+
     </>
   );
 }
