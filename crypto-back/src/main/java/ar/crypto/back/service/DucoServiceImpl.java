@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -26,7 +27,9 @@ public class DucoServiceImpl implements DucoService{
     public String getBalance(final String nameAccount) throws URISyntaxException, IOException {
         URIBuilder query = new URIBuilder(ducoApi + "/balances/" + nameAccount);
         CloseableHttpClient client = HttpClients.createDefault();
+
         HttpGet request = new HttpGet(query.build());
+        request.addHeader("context-type", String.valueOf(MediaType.APPLICATION_JSON));
         CloseableHttpResponse response = client.execute(request);
         EntityUtils.consume(response.getEntity());
         String resp = String.valueOf(response.getEntity());
